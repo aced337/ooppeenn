@@ -260,6 +260,22 @@ define Device/k2p
 endef
 TARGET_DEVICES += k2p
 
+define Device/xiaomi-redmi-ac2100
+  DTS := XIAOMI-REDMI-AC2100
+  BLOCKSIZE := 128k
+  PAGESIZE := 2048
+  KERNEL_SIZE := 4096k
+  IMAGE_SIZE := 124416k
+  UBINIZE_OPTS := -E 5
+  IMAGES += kernel1.bin rootfs0.bin
+  IMAGE/kernel1.bin := append-kernel
+  IMAGE/rootfs0.bin := append-ubi | check-size $$$$(IMAGE_SIZE)
+  IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
+  DEVICE_TITLE := Xiaomi Redmi AC2100
+  DEVICE_PACKAGES := kmod-mt7603 kmod-mt7615e wpad-basic uboot-envtools
+endef
+TARGET_DEVICES += xiaomi-redmi-ac2100
+
 define Device/xiaomi_mir3p
   DTS := MIR3P
   BLOCKSIZE := 128k
@@ -339,7 +355,7 @@ define Device/r6220
   BLOCKSIZE := 128k
   PAGESIZE := 2048
   KERNEL_SIZE := 4096k
-  IMAGE_SIZE := 28672k
+  IMAGE_SIZE := 40960k
   UBINIZE_OPTS := -E 5
   SERCOMM_HWID := AYA
   SERCOMM_HWVER := A001
@@ -582,7 +598,7 @@ TARGET_DEVICES += mqmaker_witi-512m
 define Device/wndr3700v5
   DTS := WNDR3700V5
   BLOCKSIZE := 64k
-  IMAGE_SIZE := 15232k
+  IMAGE_SIZE := 30720k
   SERCOMM_HWID := AYB
   SERCOMM_HWVER := A001
   SERCOMM_SWVER := 0x1054

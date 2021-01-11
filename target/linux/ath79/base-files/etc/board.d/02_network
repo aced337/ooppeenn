@@ -115,6 +115,8 @@ ath79_setup_interfaces()
 		;;
 	comfast,cf-e110n-v2|\
 	comfast,cf-e120a-v3|\
+	comfast,cf-e313ac|\
+	comfast,cf-e314n-v2|\
 	tplink,cpe220-v3|\
 	ubnt,nanostation-m|\
 	ubnt,routerstation)

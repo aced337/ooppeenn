@@ -191,6 +191,14 @@ define Device/totolink_lr1200
 endef
 TARGET_DEVICES += totolink_lr1200
 
+define Device/totolink_a3
+  DTS := TOTOLINK-A3
+  IMAGE_SIZE := 16064k
+  DEVICE_TITLE := TOTOLINK A3
+  DEVICE_PACKAGES := kmod-mt76x2
+endef
+TARGET_DEVICES += totolink_a3
+
 define Device/tplink_tl-wa801nd-v5
   $(Device/tplink)
   DTS := TL-WA801NDV5
@@ -395,7 +403,7 @@ TARGET_DEVICES += wavlink_wl-wn570ha1
 
 define Device/wavlink_wl-wn575a3
   DTS := WL-WN575A3
-  IMAGE_SIZE := $(ralink_default_fw_size_8M)
+  IMAGE_SIZE := $(ralink_default_fw_size_16M)
   DEVICE_TITLE := Wavlink WL-WN575A3
   DEVICE_PACKAGES := kmod-mt76x2
   SUPPORTED_DEVICES += wl-wn575a3

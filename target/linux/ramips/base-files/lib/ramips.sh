@@ -490,6 +490,9 @@ ramips_board_detect() {
 	*"TL-WR841N v13")
 		name="tl-wr841n-v13"
 		;;
+	*"TOTOLINK-A3")
+		name="totolink-a3"
+		;;
 	*"U25AWF-H1")
 		name="u25awf-h1"
 		;;
@@ -642,6 +645,9 @@ ramips_board_detect() {
 		;;
 	*"WZR-AGL300NH")
 		name="wzr-agl300nh"
+		;;
+	*"Xiaomi Redmi AC2100")
+		name="xiaomi-redmi-ac2100"
 		;;
 	*"X5")
 		name="x5"

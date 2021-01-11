@@ -57,6 +57,7 @@ platform_do_upgrade() {
 		;;
 	hc5962|\
 	r6220|\
+	Xiaomi-Redmi-AC2100|\
 	netgear,r6350|\
 	ubnt-erx|\
 	ubnt-erx-sfp|\
