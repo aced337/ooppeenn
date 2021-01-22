@@ -1,6 +1,6 @@
 openwrt
 =
-Version:19.07.5
+Version:19.07.6
 
 Compilation steps:
 
