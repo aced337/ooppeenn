@@ -272,7 +272,7 @@ define Device/xiaomi-redmi-ac2100
   IMAGE/rootfs0.bin := append-ubi | check-size $$$$(IMAGE_SIZE)
   IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
   DEVICE_TITLE := Xiaomi Redmi AC2100
-  DEVICE_PACKAGES := kmod-mt7603 kmod-mt7615e wpad-basic uboot-envtools
+  DEVICE_PACKAGES := kmod-mt7603 kmod-mt7615e kmod-mt7615-firmware
 endef
 TARGET_DEVICES += xiaomi-redmi-ac2100
 
