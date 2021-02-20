@@ -65,6 +65,10 @@ platform_do_upgrade() {
 	xiaomi,mir3p)
 		nand_do_upgrade "$1"
 		;;
+	xiaomi,mi-router-ac2100|\
+	xiaomi,redmi-router-ac2100)
+		nand_do_upgrade "$1"
+		;;
 	tplink,c50-v4)
 		MTD_ARGS="-t romfile"
 		default_do_upgrade "$1"

@@ -390,7 +390,10 @@ wrh-300cr)
 	set_wifi_led "$boardname:green:wlan"
 	ucidef_set_led_netdev "lan" "lan" "$boardname:green:ethernet" "eth0"
 	;;
-xiaomi-redmi-ac2100)
+xiaomi,mi-router-ac2100)
+	ucidef_set_led_netdev "wan-blue" "WAN (blue)" "blue:wan" "wan"
+	;;
+xiaomi,redmi-router-ac2100)
 	ucidef_set_led_netdev "wan" "wan" "white:wan" "wan"
 	;;
 xiaomi,mir3g)
