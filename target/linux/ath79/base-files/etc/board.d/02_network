@@ -15,6 +15,10 @@ ath79_setup_interfaces()
 	devolo,dvl1750c|\
 	devolo,dvl1750i|\
 	devolo,dvl1750x|\
+	domywifi,dw33d)
+		ucidef_add_switch "switch0" \
+			"0@eth0" "1:wan" "2:lan" "3:lan" "4:lan" "5:lan" "6@eth1"
+		;;
 	engenius,ecb1750|\
 	glinet,gl-ar300m-lite|\
 	netgear,ex6400|\
