@@ -1,7 +1,6 @@
 define Device/domywifi_dw33d
-  SOC := qca9558
-  DEVICE_VENDOR := DomyWifi
-  DEVICE_MODEL := DW33D
+  ATH_SOC := qca9558
+  DEVICE_TITLE := Domywifi-DW33D
   DEVICE_PACKAGES := kmod-usb2 kmod-usb-storage kmod-usb-ledtrig-usbport \
 	kmod-ath10k-ct ath10k-firmware-qca988x-ct
   KERNEL_SIZE := 5120k
