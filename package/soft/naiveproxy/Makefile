@@ -43,7 +43,7 @@ endef
 define Package/naiveproxy
 	SECTION:=net
 	CATEGORY:=Network
-	SUBMENU:=Web Servers/Proxies
+	SUBMENU:=Naiveproxy
 	URL:=https://github.com/klzgrad/naiveproxy
 	TITLE:=Make a fortune quietly
 	DEPENDS:=+libatomic +libnss
