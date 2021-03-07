@@ -57,7 +57,6 @@ platform_do_upgrade() {
 		;;
 	hc5962|\
 	r6220|\
-	Xiaomi-Redmi-AC2100|\
 	netgear,r6350|\
 	ubnt-erx|\
 	ubnt-erx-sfp|\
@@ -66,7 +65,7 @@ platform_do_upgrade() {
 		nand_do_upgrade "$1"
 		;;
 	xiaomi,mi-router-ac2100|\
-	xiaomi,redmi-router-ac2100)
+	xiaomi,redmi-ac2100)
 		nand_do_upgrade "$1"
 		;;
 	tplink,c50-v4)

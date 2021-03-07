@@ -260,7 +260,7 @@ define Device/k2p
 endef
 TARGET_DEVICES += k2p
 
-define Device/xiaomi-redmi-ac2100
+define Device/xiaomi_redmi-ac2100
   DTS := XIAOMI-REDMI-AC2100
   BLOCKSIZE := 128k
   PAGESIZE := 2048
@@ -270,7 +270,7 @@ define Device/xiaomi-redmi-ac2100
   DEVICE_TITLE := Xiaomi Redmi AC2100
   DEVICE_PACKAGES := kmod-mt7603 kmod-mt7615e kmod-mt7615-firmware
 endef
-TARGET_DEVICES += xiaomi-redmi-ac2100
+TARGET_DEVICES += xiaomi_redmi-ac2100
 
 define Device/xiaomi_mir3p
   DTS := MIR3P
