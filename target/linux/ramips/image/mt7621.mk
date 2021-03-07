@@ -261,12 +261,16 @@ endef
 TARGET_DEVICES += k2p
 
 define Device/xiaomi-redmi-ac2100
-  $(Device/xiaomi_nand_separate)
-  DEVICE_MODEL := Redmi Router AC2100
-  IMAGE_SIZE := 120320k
-  DEVICE_PACKAGES += kmod-mt7603 kmod-mt7615e kmod-mt7615-firmware
+  DTS := XIAOMI-REDMI-AC2100
+  BLOCKSIZE := 128k
+  PAGESIZE := 2048
+  KERNEL_SIZE := 4096k
+  IMAGE_SIZE := 32768k
+  UBINIZE_OPTS := -E 5
+  DEVICE_TITLE := Xiaomi Redmi AC2100
+  DEVICE_PACKAGES := kmod-mt7603 kmod-mt7615e kmod-mt7615-firmware
 endef
-TARGET_DEVICES += xiaomi_redmi-router-ac2100
+TARGET_DEVICES += xiaomi-redmi-ac2100
 
 define Device/xiaomi_mir3p
   DTS := MIR3P
