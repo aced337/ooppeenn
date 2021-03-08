@@ -199,8 +199,8 @@ TARGET_DEVICES += comfast_cf-e120a-v3
 define Device/comfast_cf-e313ac
   ATH_SOC := qca9531
   DEVICE_TITLE := COMFAST CF-E313AC
-  DEVICE_PACKAGES := rssileds kmod-ath10k \
-	ath10k-firmware-qca9888 -swconfig -uboot-envtools
+  DEVICE_PACKAGES := rssileds kmod-ath10k-ct-smallbuffers \
+	ath10k-firmware-qca9888-ct -swconfig -uboot-envtools
   IMAGE_SIZE := 16192k
 endef
 TARGET_DEVICES += comfast_cf-e313ac
@@ -209,7 +209,7 @@ define Device/comfast_cf-e314n-v2
   ATH_SOC := qca9531
   DEVICE_TITLE := COMFAST CF-E314N v2
   DEVICE_PACKAGES := rssileds
-  IMAGE_SIZE := 7936k
+  IMAGE_SIZE := 16192k
 endef
 TARGET_DEVICES += comfast_cf-e314n-v2
 
