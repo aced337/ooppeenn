@@ -186,13 +186,6 @@ define Device/buffalo/Default
   KERNEL_INITRAMFS = $$(KERNEL)
 endef
 
-define Device/buffalo-wxr-1900dhp
-  $(call Device/buffalo/Default)
-  DEVICE_TITLE := Buffalo WXR-1900DHP
-  DEVICE_PACKAGES := $(USB3_PACKAGES)
-endef
-TARGET_DEVICES += buffalo-wxr-1900dhp
-
 define Device/buffalo-wzr-600dhp2
   $(call Device/buffalo/Default)
   DEVICE_TITLE := Buffalo WZR-600DHP2
@@ -402,5 +395,13 @@ define Device/tplink-archer-c9-v1
   TPLINK_BOARD := ARCHERC9
 endef
 TARGET_DEVICES += tplink-archer-c9-v1
+
+define Device/xiaomi-r1d
+  DEVICE_TITLE := XIAOMI R1D
+  DEVICE_PACKAGES := $(B43) $(USB2_PACKAGES)
+  IMAGES := trx
+  IMAGE/trx := append-rootfs | trx-serial
+endef
+TARGET_DEVICES += xiaomi-r1d
 
 $(eval $(call BuildImage))
