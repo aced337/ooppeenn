@@ -262,11 +262,7 @@ TARGET_DEVICES += k2p
 
 define Device/xiaomi_redmi-ac2100
   DTS := XIAOMI-REDMI-AC2100
-  BLOCKSIZE := 128k
-  PAGESIZE := 2048
-  KERNEL_SIZE := 4096k
-  IMAGE_SIZE := 32768k
-  UBINIZE_OPTS := -E 5
+  IMAGE_SIZE := 120320k
   DEVICE_TITLE := Xiaomi Redmi AC2100
   DEVICE_PACKAGES := kmod-mt7603 kmod-mt7615e kmod-mt7615-firmware
 endef
