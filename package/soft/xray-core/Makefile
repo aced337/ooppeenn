@@ -40,7 +40,7 @@ include $(TOPDIR)/feeds/packages/lang/golang/golang-package.mk
 define Package/xray/template
   TITLE:=A platform for building proxies to bypass network restrictions
   SECTION:=net
-  CATEGORY:=Network
+  CATEGORY:=Network/Xray-core
   URL:=https://xtls.github.io
 endef
 
