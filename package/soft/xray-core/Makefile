@@ -1,12 +1,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=xray-core
-PKG_VERSION:=1.4.0
+PKG_VERSION:=1.4.1
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://codeload.github.com/XTLS/xray-core/tar.gz/v$(PKG_VERSION)?
-PKG_HASH:=09fcfec0b6e9362d36fb358fe781431a6c2baae71a7864eaeb1379977aa22ca9
+PKG_HASH:=0dfedb6e133f431e9588a84b7a36112e058bf09ced2d10ffe603ab0db6610430
 
 PKG_MAINTAINER:=Tianling Shen <cnsztl@project-openwrt.eu.org>
 PKG_LICENSE:=MPL-2.0
@@ -34,7 +34,8 @@ include $(TOPDIR)/feeds/packages/lang/golang/golang-package.mk
 define Package/xray/template
   TITLE:=A platform for building proxies to bypass network restrictions
   SECTION:=net
-  CATEGORY:=Network/Xray-core
+  CATEGORY:=Network
+  SUBMENU:=Xray-core
   URL:=https://xtls.github.io
 endef
 
