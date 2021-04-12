@@ -3,7 +3,7 @@ board design.
 
 ---
  arch/arm/boot/dts/Makefile                           |  1 +
- arch/arm/boot/dts/bcm4709-xiaomi-r1d.dts             | 62 +++++++++++++++++++++++++++
+ arch/arm/boot/dts/bcm4709-xiaomi-r1d.dts             | 63 +++++++++++++++++++++++++++
  2 files changed, 64 insertions(+)
  create mode 100644 arch/arm/boot/dts/bcm4709-xiaomi-r1d.dts
 
@@ -13,7 +13,7 @@ board design.
 + 	bcm4709-xiaomi-r1d.dtb \
 --- /dev/null
 +++ b/arch/arm/boot/dts/bcm4709-xiaomi-r1d.dts
-@@ -0,0 +1,62 @@
+@@ -0,0 +1,63 @@
 +/*
 + * Copyright (C) 2021 Xiaomi.
 + *
@@ -33,7 +33,8 @@ board design.
 +	};
 +
 +	memory {
-+		reg = <0x00000000 0x10000000>;
++		reg = <0x00000000 0x08000000
++		       0x88000000 0x08000000>;
 +	};
 +};
 +
