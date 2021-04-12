@@ -261,7 +261,7 @@ endef
 TARGET_DEVICES += k2p
 
 define Device/xiaomi_redmi-ac2100
-  DTS := XIAOMI-REDMI-AC2100
+  $(Device/xiaomi_nand_separate)
   IMAGE_SIZE := 120320k
   DEVICE_TITLE := Xiaomi Redmi AC2100
   DEVICE_PACKAGES := kmod-mt7603 kmod-mt7615e kmod-mt7615-firmware
