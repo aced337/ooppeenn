@@ -12,8 +12,6 @@ sudo apt install libncurses5-dev gawk gettext unzip file libssl-dev wget asciido
 
 sudo apt install libelf-dev ecj fastjar java-propose-classpath bzip2 patch lib32gcc1 libc6-dev-i386 libglib2.0-dev xmlto qemu-utils upx curl
 
-sudo apt install build-essential libncursesw5-dev python unzip
-
 2 mkdir openwrt
 
 3 sudo chmod 777 openwrt
