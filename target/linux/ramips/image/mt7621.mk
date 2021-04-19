@@ -262,9 +262,18 @@ TARGET_DEVICES += k2p
 
 define Device/xiaomi_redmi-ac2100
   DTS := Redmi-AC2100
+  BLOCKSIZE := 128k
+  PAGESIZE := 2048
+  KERNEL_SIZE := 4096k
   IMAGE_SIZE := 120320k
+  UBINIZE_OPTS := -E 5
+  IMAGES += kernel1.bin rootfs0.bin
+  IMAGE/kernel1.bin := append-kernel
+  IMAGE/rootfs0.bin := append-ubi | check-size $$$$(IMAGE_SIZE)
+  IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
   DEVICE_TITLE := Xiaomi Redmi AC2100
-  DEVICE_PACKAGES := kmod-mt7603 kmod-mt7615e kmod-mt7615-firmware
+  DEVICE_PACKAGES := kmod-mt7603 kmod-mt7615e kmod-mt7615-firmware wpad-basic \
+	uboot-envtools
 endef
 TARGET_DEVICES += xiaomi_redmi-ac2100
 
