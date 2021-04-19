@@ -473,9 +473,7 @@ ramips_setup_interfaces()
 			"2:lan:2" "3:lan:1" "1:wan" "6t@eth0"
 		;;
 	xiaomi,mi-ac2100|\
-	xiaomi,redmi-ac2100)
-		ucidef_set_interfaces_lan_wan "lan1 lan2 lan3" "wan"
-		;;
+	xiaomi,redmi-ac2100|\
 	xiaomi,mir3p)
 		ucidef_add_switch "switch0" \
 			"1:lan:3" "2:lan:2" "3:lan:1" "4:wan" "6@eth0"
