@@ -369,7 +369,7 @@ define Device/r6220
   IMAGE/rootfs.bin := append-ubi | check-size $$$$(IMAGE_SIZE)
   DEVICE_TITLE := Netgear R6220
   DEVICE_PACKAGES := \
-	kmod-mt7603 kmod-mt76x2 kmod-usb3 kmod-usb-ledtrig-usbport wpad-basic
+	kmod-mt7603 kmod-mt76x2 kmod-usb2 kmod-usb-ledtrig-usbport wpad-basic
 endef
 TARGET_DEVICES += r6220
 
