@@ -412,6 +412,9 @@ ramips_board_detect() {
 	*"R6220")
 		name="r6220"
 		;;
+	*"Redmi-AC2100")
+		name="redmi-ac2100"
+		;;
 	*"RE350 v1")
 		name="re350-v1"
 		;;
@@ -645,9 +648,6 @@ ramips_board_detect() {
 		;;
 	*"WZR-AGL300NH")
 		name="wzr-agl300nh"
-		;;
-	*"Xiaomi Redmi AC2100")
-		name="xiaomi-redmi-ac2100"
 		;;
 	*"X5")
 		name="x5"
