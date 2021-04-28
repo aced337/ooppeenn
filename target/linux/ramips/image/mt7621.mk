@@ -95,7 +95,7 @@ define Device/11acnas
   IMAGE_SIZE := $(ralink_default_fw_size_16M)
   UIMAGE_NAME := 11AC-NAS-Router(0.0.0)
   DEVICE_TITLE := WeVO 11AC NAS Router
-  DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2 kmod-usb3 kmod-usb-ledtrig-usbport wpad-openssl
+  DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2 kmod-usb3 kmod-usb-ledtrig-usbport wpad-wolfssl
 endef
 TARGET_DEVICES += 11acnas
 
@@ -112,7 +112,7 @@ define Device/asus_rt-ac57u
   DTS := RT-AC57U
   DEVICE_TITLE := ASUS RT-AC57U
   IMAGE_SIZE := 16064k
-  DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2 kmod-usb3 kmod-usb-ledtrig-usbport wpad-openssl
+  DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2 kmod-usb3 kmod-usb-ledtrig-usbport wpad-wolfssl
 endef
 TARGET_DEVICES += asus_rt-ac57u
 
@@ -124,7 +124,7 @@ define Device/dir-860l-b1
   KERNEL := kernel-bin | append-dtb | relocate-kernel | lzma | uImage lzma
   IMAGE_SIZE := $(ralink_default_fw_size_16M)
   DEVICE_TITLE := D-Link DIR-860L B1
-  DEVICE_PACKAGES := kmod-mt76x2 kmod-usb3 kmod-usb-ledtrig-usbport wpad-openssl
+  DEVICE_PACKAGES := kmod-mt76x2 kmod-usb3 kmod-usb-ledtrig-usbport wpad-wolfssl
 endef
 TARGET_DEVICES += dir-860l-b1
 
@@ -182,7 +182,7 @@ define Device/ew1200
   DEVICE_TITLE := AFOUNDRY EW1200
   DEVICE_PACKAGES := \
 	kmod-ata-core kmod-ata-ahci kmod-mt76x2 kmod-mt7603 kmod-usb3 \
-	kmod-usb-ledtrig-usbport wpad-openssl
+	kmod-usb-ledtrig-usbport wpad-wolfssl
 endef
 TARGET_DEVICES += ew1200
 
@@ -190,7 +190,7 @@ define Device/firewrt
   DTS := FIREWRT
   IMAGE_SIZE := $(ralink_default_fw_size_16M)
   DEVICE_TITLE := Firefly FireWRT
-  DEVICE_PACKAGES := kmod-mt76x2 kmod-usb3 kmod-usb-ledtrig-usbport wpad-openssl
+  DEVICE_PACKAGES := kmod-mt76x2 kmod-usb3 kmod-usb-ledtrig-usbport wpad-wolfssl
 endef
 TARGET_DEVICES += firewrt
 
@@ -199,7 +199,7 @@ define Device/gehua_ghl-r-001
   IMAGE_SIZE := $(ralink_default_fw_size_32M)
   DEVICE_TITLE := GeHua GHL-R-001
   DEVICE_PACKAGES := \
-	kmod-mt7603 kmod-mt76x2 kmod-usb3 kmod-usb-ledtrig-usbport wpad-openssl
+	kmod-mt7603 kmod-mt76x2 kmod-usb3 kmod-usb-ledtrig-usbport wpad-wolfssl
   DEFAULT := n
 endef
 TARGET_DEVICES += gehua_ghl-r-001
@@ -231,7 +231,7 @@ define Device/hc5962
   IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
   IMAGE/factory.bin := append-kernel | pad-to $$(KERNEL_SIZE) | append-ubi | check-size $$$$(IMAGE_SIZE)
   DEVICE_TITLE := HiWiFi HC5962
-  DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2 kmod-usb3 wpad-openssl
+  DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2 kmod-usb3 wpad-wolfssl
 endef
 TARGET_DEVICES += hc5962
 
@@ -241,7 +241,7 @@ define Device/iodata_wn-ax1167gr
   KERNEL_INITRAMFS := $$(KERNEL) | \
     iodata-factory 7864320 4 0x1055 $(KDIR)/tmp/$$(KERNEL_INITRAMFS_PREFIX)-factory.bin
   DEVICE_TITLE := I-O DATA WN-AX1167GR
-  DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2 wpad-openssl
+  DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2 wpad-wolfssl
 endef
 TARGET_DEVICES += iodata_wn-ax1167gr
 
@@ -249,7 +249,7 @@ define Device/iodata_wn-gx300gr
   DTS := WN-GX300GR
   IMAGE_SIZE := 7798784
   DEVICE_TITLE := I-O DATA WN-GX300GR
-  DEVICE_PACKAGES := kmod-mt7603 wpad-openssl
+  DEVICE_PACKAGES := kmod-mt7603 wpad-wolfssl
 endef
 TARGET_DEVICES += iodata_wn-gx300gr
 
@@ -272,7 +272,7 @@ define Device/xiaomi_redmi-ac2100
   IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
   IMAGE/factory.bin := append-kernel | pad-to $$(KERNEL_SIZE) | append-ubi | check-size $$$$(IMAGE_SIZE)
   DEVICE_TITLE := Xiaomi Redmi AC2100
-  DEVICE_PACKAGES := kmod-mt7603 kmod-mt7615e wpad-openssl \
+  DEVICE_PACKAGES := kmod-mt7603 kmod-mt7615e kmod-mt7615-firmware wpad-wolfssl \
 	uboot-envtools
 endef
 TARGET_DEVICES += xiaomi_redmi-ac2100
@@ -289,7 +289,7 @@ define Device/xiaomi_mir3p
   IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
   IMAGE/factory.bin := append-kernel | pad-to $$(KERNEL_SIZE) | append-ubi | check-size $$$$(IMAGE_SIZE)
   DEVICE_PACKAGES := \
-	kmod-mt7615e kmod-usb3 kmod-usb-ledtrig-usbport wpad-openssl \
+	kmod-mt7615e kmod-usb3 kmod-usb-ledtrig-usbport wpad-wolfssl \
 	uboot-envtools
 endef
 TARGET_DEVICES += xiaomi_mir3p
@@ -308,7 +308,7 @@ define Device/xiaomi_mir3g
   SUPPORTED_DEVICES += R3G
   SUPPORTED_DEVICES += mir3g
   DEVICE_PACKAGES := \
-	kmod-mt7603 kmod-mt76x2 kmod-usb3 kmod-usb-ledtrig-usbport wpad-openssl \
+	kmod-mt7603 kmod-mt76x2 kmod-usb3 kmod-usb-ledtrig-usbport wpad-wolfssl \
 	uboot-envtools
 endef
 TARGET_DEVICES += xiaomi_mir3g
@@ -326,7 +326,7 @@ define Device/newifi-d1
   IMAGE_SIZE := $(ralink_default_fw_size_32M)
   DEVICE_TITLE := Newifi D1
   DEVICE_PACKAGES := \
-	kmod-mt7603 kmod-mt76x2 kmod-usb3 kmod-usb-ledtrig-usbport wpad-openssl
+	kmod-mt7603 kmod-mt76x2 kmod-usb3 kmod-usb-ledtrig-usbport wpad-wolfssl
 endef
 TARGET_DEVICES += newifi-d1
 
@@ -335,7 +335,7 @@ define Device/d-team_newifi-d2
   IMAGE_SIZE := $(ralink_default_fw_size_32M)
   DEVICE_TITLE := Newifi D2
   DEVICE_PACKAGES := \
-	kmod-mt7603 kmod-mt76x2 kmod-usb3 kmod-usb-ledtrig-usbport wpad-openssl
+	kmod-mt7603 kmod-mt76x2 kmod-usb3 kmod-usb-ledtrig-usbport wpad-wolfssl
 endef
 TARGET_DEVICES += d-team_newifi-d2
 
@@ -345,7 +345,7 @@ define Device/pbr-m1
   DEVICE_TITLE := PBR-M1
   DEVICE_PACKAGES := \
 	kmod-ata-core kmod-ata-ahci kmod-mt7603 kmod-mt76x2 kmod-sdhci-mt7620 \
-	kmod-usb3 kmod-usb-ledtrig-usbport wpad-openssl
+	kmod-usb3 kmod-usb-ledtrig-usbport wpad-wolfssl
 endef
 TARGET_DEVICES += pbr-m1
 
@@ -367,14 +367,14 @@ define Device/r6220
   IMAGE/rootfs.bin := append-ubi | check-size $$$$(IMAGE_SIZE)
   DEVICE_TITLE := Netgear R6220
   DEVICE_PACKAGES := \
-	kmod-mt7603 kmod-mt76x2 kmod-usb3 kmod-usb-ledtrig-usbport wpad-openssl
+	kmod-mt7603 kmod-mt76x2 kmod-usb3 kmod-usb-ledtrig-usbport wpad-wolfssl
 endef
 TARGET_DEVICES += r6220
 
 define Device/netgear_ex6150
   DTS := EX6150
   DEVICE_TITLE := Netgear EX6150
-  DEVICE_PACKAGES := kmod-mt76x2 wpad-openssl
+  DEVICE_PACKAGES := kmod-mt76x2 wpad-wolfssl
   NETGEAR_BOARD_ID := U12H318T00_NETGEAR
   IMAGE_SIZE := 14848k
   IMAGES += factory.chk
@@ -400,7 +400,7 @@ define Device/netgear_r6350
   IMAGE/rootfs.bin := append-ubi | check-size $$$$(IMAGE_SIZE)
   DEVICE_TITLE := Netgear R6350
   DEVICE_PACKAGES := \
-	kmod-mt7603 kmod-mt7615e kmod-usb3 kmod-usb-ledtrig-usbport wpad-openssl
+	kmod-mt7603 kmod-mt7615e kmod-usb3 kmod-usb-ledtrig-usbport wpad-wolfssl
 endef
 TARGET_DEVICES += netgear_r6350
 
@@ -443,14 +443,14 @@ define Device/mtc_wr1201
 	DEVICE_TITLE := MTC Wireless Router WR1201
 	KERNEL_INITRAMFS := $(KERNEL_DTB) | wr1201-factory-header
 	DEVICE_PACKAGES := kmod-sdhci-mt7620 kmod-mt76x2 kmod-usb3 \
-		kmod-usb-ledtrig-usbport wpad-openssl
+		kmod-usb-ledtrig-usbport wpad-wolfssl
 endef
 TARGET_DEVICES += mtc_wr1201
 
 define Device/re350-v1
   DTS := RE350
   DEVICE_TITLE := TP-LINK RE350 v1
-  DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2 wpad-openssl
+  DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2 wpad-wolfssl
   TPLINK_BOARD_ID := RE350-V1
   TPLINK_HWID := 0x0
   TPLINK_HWREV := 0
@@ -466,14 +466,14 @@ TARGET_DEVICES += re350-v1
 define Device/re6500
   DTS := RE6500
   DEVICE_TITLE := Linksys RE6500
-  DEVICE_PACKAGES := kmod-mt76x2 wpad-openssl
+  DEVICE_PACKAGES := kmod-mt76x2 wpad-wolfssl
 endef
 TARGET_DEVICES += re6500
 
 define Device/sap-g3200u3
   DTS := SAP-G3200U3
   DEVICE_TITLE := STORYLiNK SAP-G3200U3
-  DEVICE_PACKAGES := kmod-mt76x2 kmod-usb3 kmod-usb-ledtrig-usbport wpad-openssl
+  DEVICE_PACKAGES := kmod-mt76x2 kmod-usb3 kmod-usb-ledtrig-usbport wpad-wolfssl
 endef
 TARGET_DEVICES += sap-g3200u3
 
@@ -483,7 +483,7 @@ define Device/sk-wb8
   DEVICE_TITLE := SamKnows Whitebox 8
   DEVICE_PACKAGES := \
 	kmod-mt7603 kmod-mt76x2 kmod-usb3 kmod-usb-ledtrig-usbport \
-	uboot-envtools wpad-openssl
+	uboot-envtools wpad-wolfssl
 endef
 TARGET_DEVICES += sk-wb8
 
@@ -491,7 +491,7 @@ define Device/telco-electronics_x1
   DTS := Telco-Electronics-X1
   IMAGE_SIZE := 16064k
   DEVICE_TITLE := Telco Electronics X1
-  DEVICE_PACKAGES := kmod-usb3 kmod-mt76 wpad-openssl
+  DEVICE_PACKAGES := kmod-usb3 kmod-mt76 wpad-wolfssl
 endef
 TARGET_DEVICES += telco-electronics_x1
 
@@ -553,7 +553,7 @@ define Device/w2914nsv2
   UIMAGE_NAME := W2914NS-V2(0.0.0)
   DEVICE_TITLE := WeVO W2914NS v2
   DEVICE_PACKAGES := \
-	kmod-mt7603 kmod-mt76x2 kmod-usb3 kmod-usb-ledtrig-usbport wpad-openssl
+	kmod-mt7603 kmod-mt76x2 kmod-usb3 kmod-usb-ledtrig-usbport wpad-wolfssl
 endef
 TARGET_DEVICES += w2914nsv2
 
@@ -569,7 +569,7 @@ define Device/wf-2881
   KERNEL_INITRAMFS := $(KERNEL_DTB) | netis-tail WF2881 | uImage lzma
   IMAGE/sysupgrade.bin := append-kernel | append-ubi | append-metadata | check-size $$$$(IMAGE_SIZE)
   DEVICE_TITLE := NETIS WF-2881
-  DEVICE_PACKAGES := kmod-mt76x2 kmod-usb3 kmod-usb-ledtrig-usbport wpad-openssl
+  DEVICE_PACKAGES := kmod-mt76x2 kmod-usb3 kmod-usb-ledtrig-usbport wpad-wolfssl
 endef
 TARGET_DEVICES += wf-2881
 
@@ -579,7 +579,7 @@ define Device/mqmaker_witi-256m
   DEVICE_TITLE := MQmaker WiTi (256MB RAM)
   DEVICE_PACKAGES := \
 	kmod-ata-core kmod-ata-ahci kmod-mt76x2 kmod-sdhci-mt7620 kmod-usb3 \
-	kmod-usb-ledtrig-usbport wpad-openssl
+	kmod-usb-ledtrig-usbport wpad-wolfssl
   SUPPORTED_DEVICES += witi
 endef
 TARGET_DEVICES += mqmaker_witi-256m
@@ -590,7 +590,7 @@ define Device/mqmaker_witi-512m
   DEVICE_TITLE := MQmaker WiTi (512MB RAM)
   DEVICE_PACKAGES := \
 	kmod-ata-core kmod-ata-ahci kmod-mt76x2 kmod-sdhci-mt7620 kmod-usb3 \
-	kmod-usb-ledtrig-usbport wpad-openssl
+	kmod-usb-ledtrig-usbport wpad-wolfssl
 endef
 TARGET_DEVICES += mqmaker_witi-512m
 
@@ -608,7 +608,7 @@ define Device/wndr3700v5
 	sercom-footer | pad-to 128 | zip WNDR3700v5.bin | sercom-seal
   DEVICE_TITLE := Netgear WNDR3700v5
   DEVICE_PACKAGES := \
-	kmod-mt7603 kmod-mt76x2 kmod-usb3 kmod-usb-ledtrig-usbport wpad-openssl
+	kmod-mt7603 kmod-mt76x2 kmod-usb3 kmod-usb-ledtrig-usbport wpad-wolfssl
 endef
 TARGET_DEVICES += wndr3700v5
 
@@ -617,7 +617,7 @@ define Device/youhua_wr1200js
   IMAGE_SIZE := 16064k
   DEVICE_TITLE := YouHua WR1200JS
   DEVICE_PACKAGES := \
-	kmod-mt7603 kmod-mt76x2 kmod-usb3 kmod-usb-ledtrig-usbport wpad-openssl
+	kmod-mt7603 kmod-mt76x2 kmod-usb3 kmod-usb-ledtrig-usbport wpad-wolfssl
 endef
 TARGET_DEVICES += youhua_wr1200js
 
@@ -626,7 +626,7 @@ define Device/youku_yk-l2
   IMAGE_SIZE := $(ralink_default_fw_size_16M)
   DEVICE_TITLE := Youku YK-L2
   DEVICE_PACKAGES := \
-	kmod-mt7603 kmod-mt76x2 kmod-usb3 kmod-usb-ledtrig-usbport wpad-openssl
+	kmod-mt7603 kmod-mt76x2 kmod-usb3 kmod-usb-ledtrig-usbport wpad-wolfssl
 endef
 TARGET_DEVICES += youku_yk-l2
 
@@ -635,7 +635,7 @@ define Device/wsr-1166
   IMAGE/sysupgrade.bin := trx | pad-rootfs | append-metadata
   IMAGE_SIZE := $(ralink_default_fw_size_16M)
   DEVICE_TITLE := Buffalo WSR-1166
-  DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2 wpad-openssl
+  DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2 wpad-wolfssl
 endef
 TARGET_DEVICES += wsr-1166
 
@@ -643,7 +643,7 @@ define Device/wsr-600
   DTS := WSR-600
   IMAGE_SIZE := $(ralink_default_fw_size_16M)
   DEVICE_TITLE := Buffalo WSR-600
-  DEVICE_PACKAGES := kmod-mt7603 kmod-rt2800-pci wpad-openssl
+  DEVICE_PACKAGES := kmod-mt7603 kmod-rt2800-pci wpad-wolfssl
 endef
 TARGET_DEVICES += wsr-600
 
@@ -652,7 +652,7 @@ define Device/zbt-we1326
   IMAGE_SIZE := $(ralink_default_fw_size_16M)
   DEVICE_TITLE := ZBT WE1326
   DEVICE_PACKAGES := \
-	kmod-mt7603 kmod-mt76x2 kmod-usb3 kmod-sdhci-mt7620 wpad-openssl
+	kmod-mt7603 kmod-mt76x2 kmod-usb3 kmod-sdhci-mt7620 wpad-wolfssl
 endef
 TARGET_DEVICES += zbt-we1326
 
@@ -662,7 +662,7 @@ define Device/zbtlink_zbt-we3526
   DEVICE_TITLE := ZBT WE3526
   DEVICE_PACKAGES := \
 	kmod-sdhci-mt7620 kmod-mt7603 kmod-mt76x2 \
-	kmod-usb3 kmod-usb-ledtrig-usbport wpad-openssl
+	kmod-usb3 kmod-usb-ledtrig-usbport wpad-wolfssl
 endef
 TARGET_DEVICES += zbtlink_zbt-we3526
 
@@ -672,7 +672,7 @@ define Device/zbt-wg2626
   DEVICE_TITLE := ZBT WG2626
   DEVICE_PACKAGES := \
 	kmod-ata-core kmod-ata-ahci kmod-sdhci-mt7620 kmod-mt76x2 kmod-usb3 \
-	kmod-usb-ledtrig-usbport wpad-openssl
+	kmod-usb-ledtrig-usbport wpad-wolfssl
 endef
 TARGET_DEVICES += zbt-wg2626
 
@@ -683,7 +683,7 @@ define Device/zbt-wg3526-16M
   DEVICE_TITLE := ZBT WG3526 (16MB flash)
   DEVICE_PACKAGES := \
 	kmod-ata-core kmod-ata-ahci kmod-sdhci-mt7620 kmod-mt7603 kmod-mt76x2 \
-	kmod-usb3 kmod-usb-ledtrig-usbport wpad-openssl
+	kmod-usb3 kmod-usb-ledtrig-usbport wpad-wolfssl
 endef
 TARGET_DEVICES += zbt-wg3526-16M
 
@@ -694,6 +694,6 @@ define Device/zbt-wg3526-32M
   DEVICE_TITLE := ZBT WG3526 (32MB flash)
   DEVICE_PACKAGES := \
 	kmod-ata-core kmod-ata-ahci kmod-sdhci-mt7620 kmod-mt7603 kmod-mt76x2 \
-	kmod-usb3 kmod-usb-ledtrig-usbport wpad-openssl
+	kmod-usb3 kmod-usb-ledtrig-usbport wpad-wolfssl
 endef
 TARGET_DEVICES += zbt-wg3526-32M
