@@ -315,7 +315,7 @@ TARGET_DEVICES += xiaomi_mir3g
 
 define Device/xiaomi_mir3s
   DTS := MIR3S
-  IMAGE_SIZE := $(ralink_default_fw_size_32M)
+  IMAGE_SIZE := $(ralink_default_fw_size_16M)
   DEVICE_TITLE := Xiaomi Mir3S
   DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2 kmod-usb3 kmod-usb-ledtrig-usbport wpad-wolfssl \
 	uboot-envtools
