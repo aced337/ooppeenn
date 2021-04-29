@@ -313,6 +313,15 @@ define Device/xiaomi_mir3g
 endef
 TARGET_DEVICES += xiaomi_mir3g
 
+define Device/xiaomi_mir3s
+  DTS := MIR3S
+  IMAGE_SIZE := $(ralink_default_fw_size_32M)
+  DEVICE_TITLE := Xiaomi Mir3S
+  DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2 kmod-usb3 kmod-usb-ledtrig-usbport wpad-wolfssl \
+	uboot-envtools
+endef
+TARGET_DEVICES += xiaomi_mir3s
+
 define Device/mt7621
   DTS := MT7621
   BLOCKSIZE := 64k
