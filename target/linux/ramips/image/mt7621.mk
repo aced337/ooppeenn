@@ -272,8 +272,7 @@ define Device/xiaomi_redmi-ac2100
   IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
   IMAGE/factory.bin := append-kernel | pad-to $$(KERNEL_SIZE) | append-ubi | check-size $$$$(IMAGE_SIZE)
   DEVICE_TITLE := Xiaomi Redmi AC2100
-  DEVICE_PACKAGES := kmod-mt7603 kmod-mt7615e kmod-mt7615-firmware wpad-wolfssl \
-	uboot-envtools
+  DEVICE_PACKAGES := kmod-mt7603 kmod-mt7615e kmod-mt7615-firmware wpad-wolfssl
 endef
 TARGET_DEVICES += xiaomi_redmi-ac2100
 
@@ -289,8 +288,7 @@ define Device/xiaomi_mir3p
   IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
   IMAGE/factory.bin := append-kernel | pad-to $$(KERNEL_SIZE) | append-ubi | check-size $$$$(IMAGE_SIZE)
   DEVICE_PACKAGES := \
-	kmod-mt7615e kmod-usb3 kmod-usb-ledtrig-usbport wpad-wolfssl \
-	uboot-envtools
+	kmod-mt7615e kmod-usb3 kmod-usb-ledtrig-usbport wpad-wolfssl
 endef
 TARGET_DEVICES += xiaomi_mir3p
 
@@ -308,8 +306,7 @@ define Device/xiaomi_mir3g
   SUPPORTED_DEVICES += R3G
   SUPPORTED_DEVICES += mir3g
   DEVICE_PACKAGES := \
-	kmod-mt7603 kmod-mt76x2 kmod-usb3 kmod-usb-ledtrig-usbport wpad-wolfssl \
-	uboot-envtools
+	kmod-mt7603 kmod-mt76x2 kmod-usb3 kmod-usb-ledtrig-usbport wpad-wolfssl 
 endef
 TARGET_DEVICES += xiaomi_mir3g
 
