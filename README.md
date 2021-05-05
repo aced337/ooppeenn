@@ -14,19 +14,16 @@ sudo apt install libelf-dev ecj fastjar java-propose-classpath bzip2 patch lib32
 
 2 mkdir openwrt
 
-3 sudo chmod 777 openwrt
+3 cd openwrt
 
-4 cd openwrt
+4 git clone https://github.com/Tonkercke/openwrt.git
 
-5 git clone https://github.com/Tonkercke/openwrt.git
+5 cd openwrt
 
-6 cd openwrt
+6 ./scripts/feeds update -a
 
-7 ./scripts/feeds update -a
+7 ./scripts/feeds install -a
 
-8 ./scripts/feeds install -a
+8 make menuconfig
 
-9 make menuconfig
-
-10 make V=99
-
+9 make -j1 V=s
