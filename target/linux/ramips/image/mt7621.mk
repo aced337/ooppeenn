@@ -257,7 +257,7 @@ define Device/k2p
   DTS := K2P
   IMAGE_SIZE := $(ralink_default_fw_size_16M)
   DEVICE_TITLE := Phicomm K2P
-  DEVICE_PACKAGES := kmod-mt7615e kmod-mt7615-firmware
+  DEVICE_PACKAGES := kmod-mt7615e kmod-mt7615-firmware wpad-basic
 endef
 TARGET_DEVICES += k2p
 
@@ -272,7 +272,7 @@ define Device/xiaomi_redmi-ac2100
   IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
   IMAGE/factory.bin := append-kernel | pad-to $$(KERNEL_SIZE) | append-ubi | check-size $$$$(IMAGE_SIZE)
   DEVICE_TITLE := Xiaomi Redmi AC2100
-  DEVICE_PACKAGES := kmod-mt7603 kmod-mt7615e kmod-mt7615-firmware
+  DEVICE_PACKAGES := kmod-mt7603 kmod-mt7615e kmod-mt7615-firmware wpad-basic
 endef
 TARGET_DEVICES += xiaomi_redmi-ac2100
 
@@ -288,7 +288,7 @@ define Device/xiaomi_mir3p
   IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
   IMAGE/factory.bin := append-kernel | pad-to $$(KERNEL_SIZE) | append-ubi | check-size $$$$(IMAGE_SIZE)
   DEVICE_PACKAGES := \
-	kmod-mt7615e kmod-usb3 kmod-usb-ledtrig-usbport
+	kmod-mt7615e kmod-usb3 kmod-usb-ledtrig-usbport wpad-basic
 endef
 TARGET_DEVICES += xiaomi_mir3p
 
@@ -306,7 +306,7 @@ define Device/xiaomi_mir3g
   SUPPORTED_DEVICES += R3G
   SUPPORTED_DEVICES += mir3g
   DEVICE_PACKAGES := \
-	kmod-mt7603 kmod-mt76x2 kmod-usb3 kmod-usb-ledtrig-usbport
+	kmod-mt7603 kmod-mt76x2 kmod-usb3 kmod-usb-ledtrig-usbport wpad-basic
 endef
 TARGET_DEVICES += xiaomi_mir3g
 
@@ -314,7 +314,7 @@ define Device/xiaomi_mir3s
   DTS := MIR3S
   IMAGE_SIZE := $(ralink_default_fw_size_16M)
   DEVICE_TITLE := Xiaomi Mir3S
-  DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2 kmod-usb3 kmod-usb-ledtrig-usbport
+  DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2 kmod-usb3 kmod-usb-ledtrig-usbport wpad-basic
 endef
 TARGET_DEVICES += xiaomi_mir3s
 
