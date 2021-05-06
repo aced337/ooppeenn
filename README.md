@@ -6,11 +6,7 @@ update logs : https://openwrt.org/releases/19.07/changelog-19.07.7
 
 Compilation steps:
 
-1 sudo apt install subversion g++ zlib1g-dev build-essential git python python3 flex libz-dev uglifyjs gcc-multilib msmtp texinfo autoconf automake libtool autopoint device-tree-compiler
-
-sudo apt install libncurses5-dev gawk gettext unzip file libssl-dev wget asciidoc binutils g++-multilib antlr3 gperf swig rsync
-
-sudo apt install libelf-dev ecj fastjar java-propose-classpath bzip2 patch lib32gcc1 libc6-dev-i386 libglib2.0-dev xmlto qemu-utils upx curl
+1 sudo apt install -y git make gcc g++ gawk python libncurses-dev
 
 2 mkdir openwrt
 
