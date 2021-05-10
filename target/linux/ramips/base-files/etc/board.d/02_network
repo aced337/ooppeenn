@@ -172,6 +172,7 @@ ramips_setup_interfaces()
 	alfa-network,quad-e4g|\
 	netgear,r6120|\
 	r6220|\
+	netgear,r6260|\
 	netgear,r6350|\
 	wndr3700v5)
 		ucidef_add_switch "switch0" \
@@ -338,6 +339,7 @@ ramips_setup_interfaces()
 			"2:lan:2" "3:lan:1" "0:wan" "6@eth0"
 		;;
 	head-weblink,hdrm200|\
+	dw22d|\
 	y1s)
 		ucidef_add_switch "switch0" \
 			"1:lan" "2:lan" "3:lan" "4:lan" "5:lan" "0:wan" "6@eth0"
@@ -594,6 +596,7 @@ ramips_setup_macs()
 		;;
 	hc5*61|\
 	hc5661a|\
+	dw22d|\
 	hc5962|\
 	hiwifi,hc5861b)
 		lan_mac=`mtd_get_mac_ascii bdinfo "Vfac_mac "`

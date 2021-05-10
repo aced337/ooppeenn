@@ -169,6 +169,9 @@ ramips_board_detect() {
 	*"DWR-512 B")
 		name="dwr-512-b"
 		;;
+	*"DW22D")
+		name="dw22d"
+		;;
 	*"E1700")
 		name="e1700"
 		;;
@@ -411,6 +414,9 @@ ramips_board_detect() {
 		;;
 	*"R6220")
 		name="r6220"
+		;;
+	*"R6260")
+		name="r6260"
 		;;
 	*"Redmi-AC2100")
 		name="redmi-ac2100"
